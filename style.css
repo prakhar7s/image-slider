@@ -1,0 +1,88 @@
+:root {
+  --img-size: 40vw;
+  --pagination-btn-color: rgb(5, 5, 41);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #e91e62;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app {
+  width: 180px;
+  height: 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 20px;
+  background-color: var(--pagination-btn-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease width;
+  opacity: 0.8;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
+
+.button.active {
+  width: 60px;
+  cursor: auto;
+  background-color: var(--pagination-btn-color);
+  opacity: 1;
+  border-radius: 20px;
+}
+
+.img-container {
+  height: calc(var(--img-size) * 0.7);
+  width: var(--img-size);
+  margin: 30px;
+  border: 1px solid white;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.65);
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: 1s all;
+  animation: fade-in 1s linear;
+}
+.image:hover {
+  filter: grayscale(20);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .img-container {
+    height: 300px;
+    width: 350px;
+  }
+  .button {
+    width: 15px;
+    height: 15px;
+  }
+}
